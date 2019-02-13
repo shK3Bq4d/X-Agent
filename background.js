@@ -21,6 +21,10 @@ var chrome70win = {
 	appVersion:         "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36",
 	userAgent:  "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"
 };
+var chrome71macos = {
+	appVersion:         "5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+	userAgent:  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+};
 
 function get_bHO(host)
 {
@@ -29,6 +33,7 @@ function get_bHO(host)
 	else if (/^mail.nagra.com$/.test(host))          bHO = ff40;
 	else if (/^www.whatismybrowser.com$/.test(host)) bHO = lynx;
 	else if (/^web.whatsapp.com$/.test(host))        bHO = chrome70win;
+	else if (/^.*\.apple\.com$/.test(host))          bHO = chrome71macos;
 
 	return bHO;
 }
