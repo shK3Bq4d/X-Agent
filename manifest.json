@@ -1,6 +1,6 @@
 {
   "name": "X-Agent",
-  "version": "0.8.3",
+  "version": 1557043860,
   "manifest_version": 2,
   "description": "Modify you user agent including javascript object",
   "permissions": [
@@ -9,15 +9,24 @@
     "<all_urls>"
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
-      "js": ["xagentScript.js"],
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "xagentScript.js"
+      ],
       "run_at": "document_start",
       "all_frames": true
     }
   ],
-  "web_accessible_resources": ["background.js", "xagent.js"]
+  "web_accessible_resources": [
+    "background.js",
+    "xagent.js"
+  ]
 }
