@@ -34,6 +34,7 @@ function get_bHO(host)
     else if (/^mail.nagra.com$/.test(host))          bHO = ff40;
     else if (/^www.whatismybrowser.com$/.test(host)) bHO = lynx;
     else if (/^web.whatsapp.com$/.test(host))        bHO = chrome70win;
+    else if (/^web.skype.com$/.test(host))           bHO = chrome70win;
     else if (/^.*moxtra.sfops.io$/.test(host))       bHO = chrome70win;
     else if (/^.*\.moxtra.com$/.test(host))          bHO = chrome70win;
     else if (/^www.rts.ch$/.test(host))              bHO = chrome70win;
