@@ -5,6 +5,6 @@ set -euo pipefail
 
 f=manifest.json
 _tempfile=$(mktemp); function cleanup() { [[ -n "${_tempfile:-}" && -f "$_tempfile" ]] && rm -f $_tempfile || true; }; trap 'cleanup' SIGHUP SIGINT SIGQUIT SIGTERM
-jq ".version = $(date +'%s')" $f > $_tempfile
+jq ".version = \"$(LC_NUMERIC=en_US printf "%'.f\n" $(date +%s) | tr , .)\"" $f > $_tempfile
 mv -f $_tempfile $f
 git add $f
